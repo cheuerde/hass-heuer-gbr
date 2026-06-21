@@ -2,9 +2,15 @@
 
 Static first version for `hass-heuer-gbr.de`.
 
-Live preview:
+Live preview while DNS is pending:
 
 https://cheuerde.github.io/hass-heuer-gbr/
+
+Current production target:
+
+- VM: `95.179.248.249`
+- Web server: Caddy Docker stack at `/home/cheuer/family-hub`
+- Deployed path on VM: `/home/cheuer/family-hub/hass-heuer`
 
 ## Preview
 
@@ -12,14 +18,11 @@ Open `index.html` in a browser, or serve this folder with any static web server.
 
 ## Custom domain DNS
 
-When moving `hass-heuer-gbr.de` from Squarespace to GitHub Pages, keep the
-Google Workspace mail records and change only the website records:
+When moving `www.hass-heuer-gbr.de` from Squarespace to the VM, keep the Google
+Workspace mail records and change only the `www` website record:
 
-- `@` A `185.199.108.153`
-- `@` A `185.199.109.153`
-- `@` A `185.199.110.153`
-- `@` A `185.199.111.153`
-- `www` CNAME `cheuerde.github.io`
+- Delete or replace `www` CNAME `ext-sq.squarespace.com`
+- Add `www` A `95.179.248.249`
 
 Keep:
 
